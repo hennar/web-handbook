@@ -1,0 +1,58 @@
+---
+layout: book
+---
+
+<div class="single">
+
+  <h1>
+  <br />  <br />
+  Society for Creative Anachronism, Inc.
+  <br />  <br />  <br />  <br />
+  Society Webminister’s Handbook
+  <br />  <br />  <br />  <br />
+  DRAFT - DO NOT USE
+  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+  </h1>
+
+  <p>
+    Society Webminister's Handbook 2011 Edition
+  </p>
+  <p>
+    © Copyright 2011 — The Society for Creative Anachronism, Inc. All Rights Reserved. Printed copies of this document can be ordered from SCA Marketplace, PO Box 360789, Milpitas, CA 95036-0789
+  </p>
+  
+  <p>
+    Members of the Society for Creative Anachronism, Inc. may photocopy this work in whole or in part for SCA use provided copyright credit is given and no changes are made to the text. The contents of this document will be posted at http://www.sca.org and further reproduction on other Internet sites is expressly forbidden.
+  </p>
+
+</div>
+
+<div class="single">
+
+  <h1>
+    Table of Contents
+  </h1>
+
+  <ol>
+    {% for chapter in site.chapters %}
+      <li><a href="#{{ chapter.title | slugify }}">{{ chapter.title }}</a></li>
+    {% endfor %}
+  </ol>
+
+</div>
+
+{% for chapter in site.chapters %}
+
+  <div class="single">
+
+    <a name="{{ chapter.title | slugify }}"></a>
+    <h1>
+      Chapter {{ forloop.index }}<br />
+      {{ chapter.title }}
+    </h1>
+
+    {{ chapter.content | markdownify }}
+
+  </div>
+
+{% endfor %}
